@@ -51,10 +51,12 @@ sub eqarray  {
 }
 
 # Change this to your # of ok() calls + 1
-BEGIN { $Total_tests = 5 }
+BEGIN { $Total_tests = 10 }
 
 package Foo;
 
+use vars qw($Walla_Walla);
+$Walla_Walla = "Washington";
 sub fooble { 42 }
 
 package Bar;
@@ -73,3 +75,13 @@ sub hooble { 31 }
 
 ::ok( hooble == 31 );
 ::ok( SUPER('hooble') == 13 );
+::ok( $FooBar::Walla_Walla and $FooBar::Walla_Walla eq 'Washington' );
+
+package Moo;
+use foundation;
+foundation qw(FooBar);
+
+::ok( hooble() == 31 );
+::ok( fooble() == 42 );
+::ok( mooble() == 23 );
+::ok( $Moo::Walla_Walla and $Moo::Walla_Walla eq 'Washington' );

@@ -1,5 +1,8 @@
 Revision history for Perl extension foundation
 
+0.03  Mon Dec 11 04:10:22 EST 2000
+    * Fixed variable inheritance
+
 0.02  Mon Dec 11 03:50:46 EST 2000
     * Added SUPER()
     * overriding no longer produces a warning
