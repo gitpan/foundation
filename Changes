@@ -1,5 +1,10 @@
 Revision history for Perl extension foundation
 
+0.02  Mon Dec 11 03:50:46 EST 2000
+    * Added SUPER()
+    * overriding no longer produces a warning
+    * C<use foundation qw(Foo Bar)> is now C<foundation qw(Foo Bar)>
+
 0.01  Mon Dec 11 01:13:41 EST 2000
     - First version, proof of concept.
 
